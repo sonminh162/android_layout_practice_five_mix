@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_row_platform"
+    android:layout_width="172dp"
+    android:layout_height="wrap_content"
+    android:background="#ffffff">
+
+    <ImageView
+        android:id="@+id/food_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/order_1"
+        android:contentDescription="@string/food_image" />
+
+    <TextView
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:id="@+id/food_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:text="@string/food_name"
+        android:textColor="#121212"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/food_img" />
+
+    <TextView
+        android:textColor="#6c6f74"
+        android:textSize="15sp"
+        android:id="@+id/food_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:text="@string/food_description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/food_name" />
+
+    <TextView
+        android:textSize="11sp"
+        android:textColor="#fb5e57"
+        android:id="@+id/food_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:text="@string/price"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/food_description"
+        tools:ignore="SmallSp" />
+
+    <TextView
+        android:layout_marginTop="0dp"
+        android:layout_marginStart="19dp"
+        android:textColor="#929292"
+        android:textSize="11sp"
+        app:layout_constraintStart_toEndOf="@id/food_price"
+        app:layout_constraintTop_toTopOf="@id/food_price"
+        android:id="@+id/old_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_120"
+        tools:ignore="SmallSp" />
+
+    <View
+        android:layout_marginBottom="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="2dp"
+        android:background="#929292"
+        android:layout_height="1dp"
+        android:layout_width="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/old_price"
+        app:layout_constraintTop_toTopOf="@id/old_price"
+        app:layout_constraintEnd_toEndOf="@id/old_price"
+        app:layout_constraintStart_toStartOf="@id/old_price"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

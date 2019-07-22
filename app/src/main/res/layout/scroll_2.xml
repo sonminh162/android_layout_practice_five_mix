@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    tools:ignore="ScrollViewCount">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp">
+
+        <include
+            android:id="@+id/awesome_drinks"
+            layout="@layout/item_row_new"/>
+
+        <include
+            android:id="@+id/healthy_green"
+            layout="@layout/item_row_2"/>
+
+        <include
+            android:id="@+id/healthy_brown"
+            layout="@layout/item_row_3" />
+    </LinearLayout>
+
+</ScrollView>

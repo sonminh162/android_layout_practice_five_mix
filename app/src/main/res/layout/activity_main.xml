@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/food"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/title"
+        android:layout_width="94dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="36dp"
+        android:contentDescription="@string/title"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_foodi" />
+
+    <Button
+        android:id="@+id/search"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="14dp"
+        android:background="@drawable/ic_search_5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="5dp"
+        android:background="#dcdcdc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle_view_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginBottom="17dp"
+        app:layout_constraintBottom_toTopOf="@+id/line_two"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hot_today_description" />
+
+    <View
+        android:id="@+id/line_two"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="20dp"
+        android:background="#dcdcdc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recycle_view_one" />
+
+    <TextView
+        android:id="@+id/category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="@string/categories"
+        android:textColor="#9b9b9b"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line_two" />
+
+    <Button
+        android:id="@+id/restaurant"
+        android:layout_width="29dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="21dp"
+        android:background="@drawable/ic_restaurant"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/category" />
+
+    <Button
+        android:id="@+id/coffee"
+        android:layout_width="29dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/ic_coffee"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/category" />
+
+    <Button
+        android:id="@+id/quick_fix"
+        android:layout_width="41dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="21dp"
+        android:background="@drawable/ic_quick_fix"
+        app:layout_constraintEnd_toStartOf="@+id/coffee"
+        app:layout_constraintStart_toEndOf="@+id/restaurant"
+        app:layout_constraintTop_toBottomOf="@+id/category" />
+
+    <Button
+        android:id="@+id/wine"
+        android:layout_width="29dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="21dp"
+        android:background="@drawable/ic_wine"
+        app:layout_constraintEnd_toStartOf="@+id/quick_fix"
+        app:layout_constraintStart_toEndOf="@+id/restaurant"
+        app:layout_constraintTop_toBottomOf="@+id/category" />
+
+    <Button
+        android:id="@+id/dessert"
+        android:layout_width="33dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="21dp"
+        android:background="@drawable/ic_dessert"
+        app:layout_constraintEnd_toStartOf="@+id/coffee"
+        app:layout_constraintStart_toEndOf="@+id/category"
+        app:layout_constraintTop_toBottomOf="@+id/category" />
+
+    <TextView
+        android:id="@+id/text_restaurant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="@string/restaurant"
+        android:textColor="#232524"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="@+id/restaurant"
+        app:layout_constraintStart_toStartOf="@+id/restaurant"
+        app:layout_constraintTop_toBottomOf="@+id/restaurant" />
+
+    <TextView
+        android:id="@+id/text_wine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/wine"
+        android:textColor="#232524"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="@+id/wine"
+        app:layout_constraintStart_toStartOf="@+id/wine"
+        app:layout_constraintTop_toBottomOf="@+id/wine" />
+
+    <TextView
+        android:id="@+id/text_quick_fix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:text="@string/quick_fix"
+        android:textColor="#232524"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="@+id/quick_fix"
+        app:layout_constraintStart_toStartOf="@+id/quick_fix"
+        app:layout_constraintTop_toBottomOf="@+id/quick_fix" />
+
+    <TextView
+        android:id="@+id/text_dessert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dessert"
+        android:textColor="#232524"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/text_quick_fix"
+        app:layout_constraintEnd_toEndOf="@+id/dessert"
+        app:layout_constraintHorizontal_bias="0.558"
+        app:layout_constraintStart_toStartOf="@+id/dessert" />
+
+    <TextView
+        android:id="@+id/text_coffee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/coffee"
+        android:textColor="#232524"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/text_dessert"
+        app:layout_constraintEnd_toEndOf="@+id/coffee"
+        app:layout_constraintStart_toStartOf="@+id/coffee" />
+
+    <View
+        android:id="@+id/line_three"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="20dp"
+        android:background="#dcdcdc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_restaurant" />
+
+    <TextView
+        android:id="@+id/hot_today_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/hot_today_description"
+        android:textColor="#6c6f74"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hot_today" />
+
+    <TextView
+        android:textStyle="bold"
+        android:id="@+id/hot_today"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="26dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/hot_today"
+        android:textColor="#121212"
+        android:textSize="21sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line" />
+
+    <TextView
+        android:textStyle="bold"
+        android:id="@+id/city_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/city_guide"
+        android:textColor="#121212"
+        android:textSize="21sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line_three" />
+
+    <TextView
+        android:id="@+id/city_guide_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="@string/city_guide_description"
+        android:textColor="#6c6f74"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/city_guide" />
+
+    <TextView
+        android:id="@+id/view_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="22dp"
+        android:text="@string/view_more"
+        android:textColor="#c25351"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line_four" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle_view_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="19dp"
+        app:layout_constraintBottom_toTopOf="@id/line_four"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/city_guide_description" />
+
+    <View
+        android:id="@+id/line_four"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="#dcdcdc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recycle_view_two" />
+
+    <TextView
+        android:textStyle="bold"
+        android:id="@+id/special_offers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/special_offer_title"
+        android:textColor="#121212"
+        android:textSize="21sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line_four" />
+
+    <TextView
+        android:textSize="15sp"
+        android:textColor="#6c6f74"
+        android:id="@+id/special_offers_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="0dp"
+        android:text="@string/special_offer_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/special_offers" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_three"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="22dp"
+        app:layout_constraintBottom_toTopOf="@id/line_five"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/special_offers_description" />
+
+    <View
+        android:id="@+id/line_five"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="20dp"
+        android:background="#dcdcdc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recycler_view_three" />
+
+    <TextView
+        android:textSize="21sp"
+        android:textColor="#121212"
+        android:textStyle="bold"
+        android:id="@+id/columns"
+        android:layout_marginTop="33dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="@string/columns"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line_five" />
+
+    <View
+        android:id="@+id/line_six"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="20dp"
+        android:background="#dcdcdc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/columns" />
+
+    <TextView
+        android:textSize="15sp"
+        android:textColor="#121212"
+        android:textStyle="bold"
+        android:id="@+id/best_brunch_places"
+        android:layout_marginTop="13dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="@string/best_brunch_places"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line_six" />
+
+    <View
+        android:id="@+id/line_seven"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="20dp"
+        android:background="#dcdcdc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/best_brunch_places" />
+
+    <TextView
+        android:textSize="15sp"
+        android:textColor="#121212"
+        android:textStyle="bold"
+        android:id="@+id/eating_alone"
+        android:layout_marginTop="14dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="@string/eating_alone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line_seven" />
+
+    <View
+        android:id="@+id/line_eight"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="20dp"
+        android:background="#dcdcdc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/eating_alone" />
+
+    <TextView
+        android:textSize="15sp"
+        android:textColor="#121212"
+        android:textStyle="bold"
+        android:id="@+id/party_every_night"
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="@string/party_every_night"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line_eight" />
+
+    <View
+        android:id="@+id/line_nine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="#dcdcdc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/party_every_night" />
+
+    <View
+        android:id="@+id/bottom_menu"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="55dp"
+        android:background="#f9f9f9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line_nine" />
+
+    <Button
+        android:background="@drawable/ic_select"
+        android:id="@+id/select"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@id/bottom_menu"
+        app:layout_constraintTop_toTopOf="@id/bottom_menu" />
+
+    <Button
+        android:background="@drawable/ic_me"
+        android:id="@+id/me"
+        android:layout_marginTop="0dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintEnd_toEndOf="@id/bottom_menu"
+        app:layout_constraintTop_toTopOf="@id/select" />
+
+    <Button
+        android:background="@drawable/ic_magazine"
+        android:id="@+id/magazine"
+        android:layout_marginTop="0dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/select" />
+
+    <Button
+        android:background="@drawable/ic_store"
+        android:id="@+id/store"
+        android:layout_marginTop="0dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:layout_constraintStart_toEndOf="@id/select"
+        app:layout_constraintEnd_toStartOf="@id/magazine"
+        app:layout_constraintTop_toTopOf="@id/select" />
+
+    <Button
+        android:background="@drawable/ic_cart"
+        android:id="@+id/cart"
+        android:layout_marginTop="0dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:layout_constraintStart_toEndOf="@id/magazine"
+        app:layout_constraintEnd_toStartOf="@id/me"
+        app:layout_constraintTop_toTopOf="@id/select" />
+
+    <TextView
+        android:textSize="10sp"
+        android:textColor="#232524"
+        android:id="@+id/select_text"
+        android:layout_marginTop="3dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/select_text"
+        app:layout_constraintEnd_toEndOf="@id/select"
+        app:layout_constraintStart_toStartOf="@id/select"
+        app:layout_constraintTop_toBottomOf="@id/select"
+        tools:ignore="SmallSp" />
+
+    <TextView
+        android:textSize="10sp"
+        android:textColor="#929292"
+        android:id="@+id/store_text"
+        android:layout_marginTop="3dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/store_text"
+        app:layout_constraintEnd_toEndOf="@id/store"
+        app:layout_constraintStart_toStartOf="@id/store"
+        app:layout_constraintTop_toBottomOf="@id/store"
+        tools:ignore="SmallSp" />
+
+    <TextView
+        android:textSize="10sp"
+        android:textColor="#929292"
+        android:id="@+id/magazine_text"
+        android:layout_marginTop="3dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/magazine_text"
+        app:layout_constraintEnd_toEndOf="@id/magazine"
+        app:layout_constraintStart_toStartOf="@id/magazine"
+        app:layout_constraintTop_toBottomOf="@id/magazine"
+        tools:ignore="SmallSp" />
+
+    <TextView
+        android:textSize="10sp"
+        android:textColor="#929292"
+        android:id="@+id/cart_text"
+        android:layout_marginTop="3dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cart_text"
+        app:layout_constraintEnd_toEndOf="@id/cart"
+        app:layout_constraintStart_toStartOf="@id/cart"
+        app:layout_constraintTop_toBottomOf="@id/cart"
+        tools:ignore="SmallSp" />
+
+    <TextView
+        android:textSize="10sp"
+        android:textColor="#929292"
+        android:id="@+id/me_text"
+        android:layout_marginTop="3dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/me_text"
+        app:layout_constraintEnd_toEndOf="@id/me"
+        app:layout_constraintStart_toStartOf="@id/me"
+        app:layout_constraintTop_toBottomOf="@id/me"
+        tools:ignore="SmallSp" />
+
+    <Button
+        android:background="@drawable/ic_arrow"
+        android:id="@+id/best_brunch_places_button"
+        android:layout_width="5.5dp"
+        android:layout_height="10dp"
+        android:layout_marginEnd="23dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/best_brunch_places" />
+
+    <Button
+        android:background="@drawable/ic_arrow"
+        android:id="@+id/eating_alone_button"
+        android:layout_width="5.5dp"
+        android:layout_height="10dp"
+        android:layout_marginEnd="23dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/eating_alone" />
+
+    <Button
+        android:background="@drawable/ic_arrow"
+        android:id="@+id/party_every_night_button"
+        android:layout_width="5.5dp"
+        android:layout_height="10dp"
+        android:layout_marginEnd="23dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/party_every_night" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
