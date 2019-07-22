@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.scroll);
+        setContentView(R.layout.container);
 
         initView();
 
