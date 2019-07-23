@@ -7,6 +7,6 @@
     tools:ignore="ScrollViewCount">
 
     <include
-        layout="@layout/activity_main"/>
+        layout="@layout/main_view_pager"/>
 
 </ScrollView>

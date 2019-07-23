@@ -3,7 +3,9 @@ package com.lifetime.layout_practice_five_recyclerview;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Build;
@@ -12,10 +14,16 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+
+    private ArrayList<VpObject> listObject;
+    private ViewPager viewPager;
+    TextView pagination,pagination_head;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +43,53 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.container);
 
-        initView();
+        pagination = findViewById(R.id.pagination);
+        pagination_head = findViewById(R.id.head_pagination);
+
+//        initView();
+        initViewByUsingViewPager();
 
         initRecyclerView2();
 
         initRecyclerView3();
 
+    }
+
+    @SuppressLint("SetTextI18n")
+    private void initViewByUsingViewPager() {
+        listObject = new ArrayList<>();
+        listObject.add(new VpObject(R.drawable.item_row_1,"Wendsaday","25% off for a table of two","Dinner 25% off, and only 68 USD/each in Solois Coffee, And Free All Girls There"));
+        listObject.add(new VpObject(R.drawable.item_row_1,"Wendsaday","25% off for a table of two","Dinner 25% off, and only 68 USD/each in Solois Coffee, And Free All Girls There"));
+        listObject.add(new VpObject(R.drawable.item_row_1,"Wendsaday","25% off for a table of two","Dinner 25% off, and only 68 USD/each in Solois Coffee, And Free All Girls There"));
+
+        viewPager = findViewById(R.id.view_pager_position);
+        ViewPageAdapter adapter = new ViewPageAdapter(listObject,this);
+        viewPager.setAdapter(adapter);
+
+        // init pagination
+        pagination_head.setText("1");
+        pagination.setText("/"+listObject.size());
+        //
+
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+//                Toast.makeText(getApplicationContext(),"Successfully",Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                int currentPosition = position +1;
+                String headPagination = ""+currentPosition;
+                pagination_head.setText(headPagination);
+//                Toast.makeText(getApplicationContext(),"Slide:"+currentPosition+"/"+listObject.size(),Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+//                Toast.makeText(getApplicationContext(),"Successfully",Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     private void initRecyclerView3() {
@@ -79,9 +128,9 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         ArrayList<TodayMenu> arrayList = new ArrayList<>();
-        arrayList.add(new TodayMenu(R.drawable.item_row_1,"Wendsaday","25% off for a table of two","Dinner 25% off, and only 68 USD/each in Solois Coffee"));
-        arrayList.add(new TodayMenu(R.drawable.item_row_1,"Wendsaday","25% off for a table of two","Dinner 25% off, and only 68 USD/each in Solois Coffee"));
-        arrayList.add(new TodayMenu(R.drawable.item_row_1,"Wendsaday","25% off for a table of two","Dinner 25% off, and only 68 USD/each in Solois Coffee"));
+        arrayList.add(new TodayMenu(R.drawable.item_row_1,"Wendsaday","25% off for a table of two","Dinner 25% off, and only 68 USD/each in Solois Coffee, And Free All Girls There"));
+        arrayList.add(new TodayMenu(R.drawable.item_row_1,"Wendsaday","25% off for a table of two","Dinner 25% off, and only 68 USD/each in Solois Coffee, And Free All Girls There"));
+        arrayList.add(new TodayMenu(R.drawable.item_row_1,"Wendsaday","25% off for a table of two","Dinner 25% off, and only 68 USD/each in Solois Coffee, And Free All Girls There"));
 
         TodayMenuAdapter adapter = new TodayMenuAdapter(arrayList,getApplicationContext());
         recyclerView.setAdapter(adapter);
